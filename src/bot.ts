@@ -2,7 +2,6 @@ import { GatewayIntentBits, Partials } from 'discord.js';
 import * as dotenv from 'dotenv';
 import ZClient from './types/classes/ZClient';
 import logger from './scripts/logger';
-
 dotenv.config();
 
 const bot = new ZClient({
@@ -11,7 +10,8 @@ const bot = new ZClient({
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.MessageContent,
     GatewayIntentBits.GuildMembers,
-    GatewayIntentBits.GuildMessageReactions
+    GatewayIntentBits.GuildMessageReactions,
+    GatewayIntentBits.GuildVoiceStates
   ],
   partials: [Partials.Message, Partials.Channel, Partials.Reaction]
 });

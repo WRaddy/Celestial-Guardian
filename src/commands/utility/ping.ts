@@ -1,4 +1,8 @@
-import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
+import {
+  ChatInputCommandInteraction,
+  GuildMember,
+  SlashCommandBuilder
+} from 'discord.js';
 import Command from '../../types/interfaces/Command';
 import logger from '../../scripts/logger';
 import ZEmbed from '../../types/classes/ZEmbed';
@@ -10,7 +14,7 @@ const ping: Command = {
   execute: async (interaction: ChatInputCommandInteraction) => {
     try {
       await interaction.reply({
-        embeds: [new ZEmbed('info').setDescription('Pong !')],
+        embeds: [new ZEmbed('info').setDescription('Pong!')],
         ephemeral: true
       });
     } catch (error) {
